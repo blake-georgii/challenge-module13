@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
       'product_name',
       'price',
       'stock',
-      'category_id',
     ],
     //include its associated Category and Tag data
     include: [
@@ -40,7 +39,7 @@ router.get('/:id', (req, res) => {
   Product.findOne({
     where: {
       id: req.params.id
-    }
+    },
     attributes: [
       'id',
       'product_name',
